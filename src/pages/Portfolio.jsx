@@ -82,7 +82,7 @@ const portfolioItems = [
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('Все');
-  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const filteredItems = activeCategory === 'Все'

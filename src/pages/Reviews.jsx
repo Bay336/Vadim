@@ -62,7 +62,7 @@ const reviews = [
 
 export default function Reviews() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef(null);
 
   const nextReview = () => {
     setActiveIndex((prev) => (prev + 1) % reviews.length);
