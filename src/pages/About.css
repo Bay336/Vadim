@@ -1,0 +1,247 @@
+/* About Hero */
+.about-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,26,46,0.8) 0%, rgba(26,26,46,0.95) 100%);
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-hero__content h1 {
+  font-size: 3.5rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.about-hero__content p {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+/* Bio Section */
+.about-bio__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-bio__image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-bio__image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.about-bio__image-frame {
+  position: absolute;
+  inset: 10px;
+  border: 2px solid var(--gold);
+  border-radius: 15px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.about-bio__text h2 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.about-bio__divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-gold);
+  margin-bottom: 25px;
+  border-radius: 2px;
+}
+
+.about-bio__text p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Skills */
+.about-skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.about-skills__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.about-skills__card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(201, 169, 110, 0.15);
+  background: rgba(201, 169, 110, 0.05);
+}
+
+.about-skills__card-icon {
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.about-skills__card h3 {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.about-skills__card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.timeline__item--left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 30px);
+}
+
+.timeline__item--right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 30px);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.5);
+  z-index: 2;
+}
+
+.timeline__card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.timeline__card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 5px 20px rgba(201, 169, 110, 0.15);
+}
+
+.timeline__year {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(201, 169, 110, 0.15);
+  color: var(--gold);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.timeline__card h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.timeline__card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about-bio__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-bio__image img {
+    height: 350px;
+  }
+  
+  .about-skills__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline__item--left,
+  .timeline__item--right {
+    padding-left: 50px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  
+  .timeline__dot {
+    left: 20px;
+  }
+}
